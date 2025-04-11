@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
@@ -72,7 +72,7 @@ const Login = () => {
           {loading ? 'Logging in...' : 'Login'}
         </button>
         <p className="mt-4 text-sm text-center">
-          Don't have an account? <a href="/register" className="text-blue-600 underline">Register</a>
+          Don't have an account? <Link to="/register" className="text-blue-600 underline">Register</Link>
         </p>
       </form>
     </div>
