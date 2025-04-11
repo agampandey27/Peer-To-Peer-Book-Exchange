@@ -7,7 +7,8 @@ const AddBook = () => {
   const navigate = useNavigate();
   
   // Retrieve userId from localStorage
-  const ownerId = localStorage.getItem('userId');
+  // const ownerId = localStorage.getItem('userId');
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const [bookData, setBookData] = useState({
     title: '',
@@ -32,8 +33,10 @@ const AddBook = () => {
       // Combine book data with owner ID
       const completeBookData = {
         ...bookData,
-        ownerId: ownerId
+        ownerId: user._id
       };
+
+      console.log(completeBookData)
 
       // API call to add book
       const response = await axios.post('https://peer-to-peer-book-exchange.onrender.com/api/book/', completeBookData);
