@@ -13,8 +13,8 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:8080/api/auth/register', formData);
-      alert('Registration successful!');
+      await axios.post('https://peer-to-peer-book-exchange.onrender.com/api/auth/register', formData);
+      alert('Registration successful! Try Loggin in Now');
       navigate('/');
     } catch (err) {
       alert(err.response?.data?.message || 'Registration failed');

@@ -10,7 +10,7 @@ const MyBooks = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/api/book/');
+      const response = await axios.get('https://peer-to-peer-book-exchange.onrender.com/api/book/');
       const ownerBooks = response.data.books.filter(
         book => book.owner._id === user._id
       );
@@ -26,7 +26,7 @@ const MyBooks = () => {
   // Update Book Status
   const handleStatusChange = async (bookId, newStatus) => {
     try {
-      await axios.patch(`http://localhost:8080/api/book/${bookId}/status`, { 
+      await axios.patch(`https://peer-to-peer-book-exchange.onrender.com/api/book/${bookId}/status`, { 
         status: newStatus 
       });
       

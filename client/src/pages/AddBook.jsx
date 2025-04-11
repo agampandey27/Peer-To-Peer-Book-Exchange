@@ -36,7 +36,7 @@ const AddBook = () => {
       };
 
       // API call to add book
-      const response = await axios.post('http://localhost:8080/api/book/', completeBookData);
+      const response = await axios.post('https://peer-to-peer-book-exchange.onrender.com/api/book/', completeBookData);
       
       alert('Book added successfully!');
       navigate('/owner-dashboard');

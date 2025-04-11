@@ -15,7 +15,7 @@ const SeekerDashboard = () => {
 
     const fetchBooks = async () => {
         try {
-            const res = await axios.get("http://localhost:8080/api/book/");
+            const res = await axios.get("https://peer-to-peer-book-exchange.onrender.com/api/book/");
             setBooks(res.data.books || []);
             setFilteredBooks(res.data.books || []);
         } catch (error) {
